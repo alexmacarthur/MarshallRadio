@@ -1,0 +1,38 @@
+.entry.lost-pet{
+	height: 300px;
+	padding-top: 9px;
+}
+	
+	.content .entry.lost-pet-title{
+		
+	}
+
+	.pet-picture{
+		height: 280px;
+		overflow:hidden;
+		img{
+			width:100%;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	.pet-info{
+		height:280px;
+		h1{
+			font-weight:800;
+			color:$nav-color;
+			margin-bottom: 5px;
+			span{
+				font-weight:100;
+			}
+		}
+
+		p{
+			color:$nav-color;
+		}
+		hr{
+			margin:10px;
+			border-top: 5px solid rgba($nav-color,.2);
+		}
+	}

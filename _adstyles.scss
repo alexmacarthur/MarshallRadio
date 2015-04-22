@@ -1,0 +1,138 @@
+/* ads */
+.a-single{
+	text-align: center;
+	margin-bottom: 15px;
+	&.a-9{
+		margin-bottom:0;
+		img{
+			width:100%;
+		}
+		a{
+			padding:0;
+		}
+
+	}
+	&.a-7{
+		object{
+			@media screen and (max-width:992px){
+				width:100%;
+			}
+		}
+
+		img{
+			@media screen and (max-width:750px){
+				width: 90%;
+			}
+			
+		}
+		
+	}
+	&.a-8{
+		@extend .a-7;
+		img{
+			@media screen and (max-width:650px){
+				margin: 20px 0 -10px 0;
+			}
+		}
+	}
+	&.a-6{
+		text-align:left;
+		padding-bottom: 30px;
+		@media screen and (max-width:650px){
+			float:none;
+			text-align:center;
+			}
+		img{
+			width: 100%;
+			float: left;
+			margin-top: -29px;
+			@media screen and (max-width:1200px){
+				width: 100%;
+				margin-top: -23px;
+			}
+			@media screen and (max-width:650px){
+				width:100%;
+				float:none;
+				margin-top: 20px;
+
+			}
+		}
+	}
+	&.a-5{
+		margin-bottom:0;
+		a{
+			padding:0;
+			img{
+				border: 3px solid $nav-color;
+				width:100%;
+			}
+		}
+	}
+}
+
+/* new ad styles */
+
+.ad-block{
+	text-align:center;
+	&.ad-1{
+		img{
+			@media screen and (max-width:750px){
+				width: 90%;
+			}	
+		}
+	}
+	&.ad-2{
+		text-align:left;
+		padding-bottom: 30px;
+		@media screen and (max-width:650px){
+			float:none;
+			text-align:center;
+			}
+		img{
+			width: 100%;
+			float: left;
+			margin-top: -29px;
+			@media screen and (max-width:1200px){
+				width: 100%;
+				margin-top: -23px;
+			}
+			@media screen and (max-width:650px){
+				width:100%;
+				float:none;
+				margin-top: 20px;
+
+			}
+		}
+	}
+}
+
+/* newest ad styles */
+
+.g{
+	overflow:visible!important;
+}
+.ad-group-1{
+	img{
+		width:100%;
+	}
+}
+.ad-group-2{
+	text-align: center;
+	object{
+		@media screen and (max-width:992px){
+			width:100%;
+		}
+	}
+	img{
+		@media screen and (max-width:750px){
+			width: 90%;
+		}
+	}
+}
+.ad-group-3{
+	text-align:center;
+	img{
+		width: 98%;
+		margin: 3px 0;
+	}
+}
