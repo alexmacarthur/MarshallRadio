@@ -23,6 +23,7 @@
 	add_action( 'pre_get_posts', 'five_posts_on_homepage' );
 
 	add_theme_support( 'menus' );
+
 	if ( function_exists( 'add_theme_support' ) ) { 
 		add_theme_support( 'post-thumbnails' ); 
 	}
@@ -38,6 +39,29 @@
 	        $query->set( 'cat', -5 );
 	    }
 	}
+
+	function enqueue_my_scripts_and_styles(){
+
+		wp_register_style('bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', array(), '1');
+		wp_register_style('custom-style', get_template_directory_uri() . '/styles/style.css', array('bootstrap'), '1');
+
+		wp_deregister_script( 'jquery' );
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), '2.1.3', true);
+		wp_register_script('map', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), '1', true);
+		wp_register_script('bootstrap-javascript','//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',array('jquery'), '1', true);
+	    wp_register_script( 'dropit', get_template_directory_uri() . '/js/dropit.js', array('jquery'), '1', true);
+	    wp_register_script( 'custom-script', get_template_directory_uri() . '/js/scripts.js', array('jquery','dropit','bootstrap-javascript'), '1', true);
+
+	    // Enqueue my custom script, which depends on jQuery, which means jQuery is automatically loaded as well. 
+	    wp_enqueue_script( 'custom-script' );
+	    wp_enqueue_script( 'dropit' );
+	    wp_enqueue_script('bootstrap-javascript');
+
+	    // Enqueue custom styles
+	    wp_enqueue_style('custom-style');
+	}
+
+	add_action( 'wp_enqueue_scripts', 'enqueue_my_scripts_and_styles' );
 
 	// Get the page number
 	function get_page_number() {

@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
 $speed: .1s;
 $hover-color: rgba(white,
 0.05);
@@ -26,6 +28,7 @@ $veritcal-shadow2: 0px;
 $blur-shadow2: 1px;
 
 @import "mixins";
+@import "dropit";
 
 html,
 body {
@@ -197,23 +200,27 @@ nav{
 			cursor:pointer;
 		}
 	}
+	.navbar-row{
+		margin-top:0;
+	}
 	.nav-logo{
 		float:left;
+	    text-align: center;
 		position:relative;
 		width: 20%;
 	}
 		.logo-img{
 			margin-top: -39px;
 		}
+	.menu-home-menu-container{
+		float: left;
+    	width: 80%;
+	}
 	.nav-links{
-		@extend %display-flex;
-		@extend %justify-content-flex-end;
 		height:100%;
-		width: 80%;
 		list-style-type:none;
-		float: right;
+		text-align:center;
 		padding: 0;
-
 		li{
 			@extend h1;
 			font-size:22px;
@@ -221,6 +228,7 @@ nav{
 			height:100%;
 			padding: 0 3%;
 			position:relative;
+		    display: inline-block;
 			&:hover{
 					@extend %transition-speed;
 					background:rgba(white, .05);
@@ -231,62 +239,29 @@ nav{
 			}
 		}
 	}
-	#dropdown{
-		text-align: center;
-		position:relative;
-	}
-	ul#dropdown-list{
-		z-index: 1500;
-		position:absolute;
-		display:none;
-		left: 0;
-		width: 100%;
-		padding: 0px 5px 15px 5px;
-		background: rgba(88,88,88,0.8);
-		line-height:100%;
-		list-style-type: none;
-		img{
-			margin-top: -40px;
-		}
+	.sub-menu{
+		@include horizontalAlign;
+		display:block;
+		background: rgba(white, .75);
+	    width: 100%;
 		li{
-			padding: 3%;
-			line-height:100%;
+			line-height:normal;
+			a{
+				color: $nav-color;
+			    font-weight: 400;
+			}
 		}
-
+		&:before{
+			content: '';
+			display:block;
+			width: 0; 
+			height: 0; 
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-bottom: 8px solid rgba(white, .75);
+		    margin: -8px auto 0 auto;
+		}
 	}
-	.mobile-only{
-		display:none;
-	}
-/* cyclone slider */
-.cycloneslider-template-standard .cycloneslider-pager{
-    bottom: 20px!important;
-    z-index: 500!important;
-}
-.cycloneslider-template-standard{
-	margin:0!important;
-}
-.cycloneslider-caption{
-	bottom: 20%!important;
-	width: auto!important;
-	left: 10%!important;
-	color: white!important;
-	opacity: 1!important;
-	background:rgba($nav-color, .6)!important;
-	padding:15px;
-}
-
-@mixin slideSpeed($seconds:1s){
-	-webkit-transition: opacity $seconds; 
-	-moz-transition: opacity $seconds; 
-	-ms-transition: opacity $seconds; 
-	-o-transition: opacity $seconds; 
-	transition: opacity $seconds;
-}
-.carousel .item {
-	@include slideSpeed;
-}
-.carousel .active.left {left:0;opacity:0;z-index:2;}
-.carousel .next {left:0;opacity:1;z-index:1;}
 
 .main-block-holder{
 	height:200px;
@@ -319,19 +294,7 @@ nav{
 		width:30%;
 		height:150px;
 		margin-right:15px;
-		// background:yellow;
-		// background: rgba($pink, .5);
-		// border-bottom: 5px solid rgba($pink, .85);
 		position:relative;
-		&:first-child{
-			// background: $green;
-		}
-		&:nth-child(2){
-			
-		}
-		&:last-child{
-			// margin-right:0;
-		}
 		a{
 			position:absolute;
 			width:100%;
@@ -358,15 +321,15 @@ nav{
 		height:100px;
 		border-radius:100%;
 		&.lost-pets-icon{
-			background: $nav-color url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/icon-pets.png') no-repeat;
+			background: $nav-color url('../img/icon-pets.png') no-repeat;
 			background-position:center;
 		}
 		&.calendar-icon{
-			background: $nav-color url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/icon-calendar.png') no-repeat;
+			background: $nav-color url('../img/icon-calendar.png') no-repeat;
 			background-position:center;
 		}
 		&.auction-icon{
-			background: $nav-color url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/icon-auction.png') no-repeat;
+			background: $nav-color url('../img/icon-auction.png') no-repeat;
 			background-position: 17px 13px;
 		}
 	}
