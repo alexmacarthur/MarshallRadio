@@ -6,6 +6,12 @@
 }
 
 @media screen and (max-width:1200px){
+	.main-message{
+		height:300px;
+		h1{
+			font-size: 3.5rem;
+		}
+	}
 	.nav-links{
 		li{
 			padding: 0 2%;
@@ -26,6 +32,9 @@
 }
 
 @media screen and (max-width:992px){
+	.main-message{
+	    height: 135px;
+	}
 	.menu-home-menu-container{
 		width: 100%;
 	}
@@ -43,7 +52,6 @@
 		margin-top: 15px;
 	}
 	.nav-links{
-		justify-content: center;
 		width: 100%;
 		margin: 10px 0 0 0;
 		li{
@@ -151,6 +159,9 @@
 }
 
 @media screen and (max-width:768px){
+	#mobile-menu-toggle{
+		display:block;
+	}
 	button{
 		display:block;
 	}
@@ -160,6 +171,9 @@
 			line-height: 50px;
 			text-align: center;
 		}
+	}
+	#mobile-menu{
+
 	}
 	.logo-img{
 		margin-bottom: 20px;
@@ -191,14 +205,13 @@
 	}
 	.main-message-holder{
 		text-align: center;
-		transform: translateY(0%);
+		bottom: 40px;
 	}
 	.main-message{
-		height: 350px;
 		h1{
 			width:100%;
 			width: 100%;
-			font-size:3em;
+			font-size:3rem;
 		}
 		span{
 			font-size: 20px;
@@ -230,13 +243,6 @@
 				}
 			}
 		}
-	}
-	.carousel{
-		.carousel-inner{
-			.item{
-				max-height:375px;
-			}	
-		}	
 	}
 	.content{
 		.entry{
@@ -274,13 +280,6 @@
 	.banner{
 		height: 150px;
 	}
-	.carousel{
-		.carousel-inner{
-			.item{
-				max-height: 300px;
-			}
-		}
-	}
 	.content{
 		.entry{
 			padding-bottom: 70px;
@@ -317,18 +316,15 @@
 
 @media screen and (max-width:560px){
 	.main-message{
-		h1{
-			font-size:2em;
-
+		h1,span{
+			font-size: 2.0rem;
 		}
 	}
-
 	.content{
 		.bottom-nav{
 			height:auto;
 		}
 	}
-
 	.container{
 		.row{
 			.content{
@@ -345,7 +341,6 @@
 		}
 	}
 }
-
 .sidebar{
 	.widget-area{
 		&:first-of-type{
@@ -373,19 +368,5 @@
 			width: 100%;
 			height: auto;
 		}
-	}
-	.carousel{
-		min-height:260px;
-		.carousel-inner{
-			.item{
-				max-height:300px;
-				.carousel-caption{
-					width:75%;
-					h4{
-						font-size:1.5em;
-					}
-				}
-			}	
-		}	
 	}
 }

@@ -23,15 +23,44 @@
 
   <body>
 
+  <div id="mobile-menu">
+
+    <?php 
+      $defaults = array(
+        'theme_location'  => '',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => '',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul class="nav-links">%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+        );
+      wp_nav_menu($defaults); 
+    ?>
+
+  </div>
+
   <div class="wrapper">
 
   <div class="nav-area">
 
-
       <nav>
+
+        <div id="mobile-menu-toggle">
+          Menu <i class="fa fa-bars"></i>
+        </div>
+
         <div class="container">
 
-          <div class="row navbar-row">
             <div class="nav-logo">
                 <a class="nav-brand" href="<?php echo get_home_url(); ?>"></a>
                 <img class="logo-img" src="<?php echo get_template_directory_uri();?>/img/logo.png">
@@ -58,21 +87,18 @@
                 );
               wp_nav_menu($defaults); 
             ?>
-          </div>
 
         </div>
+
       </nav>
 
       <div class="main-message">
-
-        <div class="container main-message-holder">
-          <h1>WELCOME TO MARSHALL RADIO</h1>
-          <span>Home of KKCK, KMHL, KARL, &AMP; KARZ</span>
-
+          <div class="container main-message-holder">
+            <h1>WELCOME TO MARSHALL RADIO</h1>
+            <span>Home of KKCK, KMHL, KARL, &AMP; KARZ</span>
+          </div>
           <div class="background"></div>
-
       </div>
-  </div>
       
       <div class="col-md-12 divider home">
           <div class="container">

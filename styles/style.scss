@@ -61,7 +61,7 @@ span{
 	@extend body;
 }
 nav{
-	z-index: 1;
+	z-index: 2;
 }
 .page-title{
 	color:$nav-color;
@@ -69,6 +69,7 @@ nav{
 
 .container{
 	width:80%;
+	position:relative;
 }
 
 .grayButton{
@@ -94,11 +95,11 @@ nav{
 }
 
 .main-message-holder{
-	position: relative;
+	position: absolute;
+	width:100%!important;
 	text-align:center;
-	top: 50%;
-	transform: translateY(-25%);
-	z-index:2;
+	z-index:1;
+	bottom: 30px;
 }
 .main-message{
 	background: url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/radiobackground.jpg');
@@ -121,49 +122,6 @@ nav{
 	.background{
 		@extend %full-link;
 		background: rgba($nav-color, .6)
-	}
-}
-
-/* carousel slider */
-.slide {
-	width: 100%;
-}
-.carousel {
-	top: 0;
-	.carousel-control {
-		background: none;
-	}
-	.carousel-indicators {
-		text-align: right;
-		width: 70%;
-		margin-left: -35%;
-	}
-	.carousel-inner {
-		.item {
-			height: 550px;
-			width: 100%;
-			background-size:cover;
-			.carousel-caption{
-				background:rgba($nav-color, .7);
-				left: 10%;
-				width: 30%;
-				bottom: 20%;
-				padding: 20px;
-				text-align: left;
-				h4{
-					font-weight:100;
-					text-transform:uppercase;
-				}
-				a{
-					font-weight:100;
-					color:white;
-					text-decoration:none;
-				}
-			}
-			img {
-				width:100%;
-			}
-		}
 	}
 }
 
@@ -208,9 +166,6 @@ nav{
 		&:hover{
 			cursor:pointer;
 		}
-	}
-	.navbar-row{
-		margin-top:0;
 	}
 	.nav-logo{
 		float:left;
@@ -424,7 +379,6 @@ nav{
 }
 
 .container{
-	position:relative;
 	.title{
 		padding: 15px 0 25px 0;
 
@@ -1340,14 +1294,53 @@ h2.tribe-events-list-event-title{
 #ehu-open-button{
 	display:none!important;
 }
-
-@import "adstyles";
-@import "announcements";
-@import "lostpets";
-@import "mediaqueries";
-
-
+#mobile-menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba($lighter-gray, .95);
+	.nav-links{
+		display:block;
+		li{
+			width:100%;
+			a{
+			    font-weight: 600;
+				color: $nav-color;
+			}
+		}
+	}
+	.sub-menu{
+		@include undoHorizontalAlign;
+		padding:0;
+		left:auto;
+		position:relative;
+		background:none;
+	}
+}
+#mobile-menu-toggle{
+	display:none;
+    padding: 10px 15px;
+    font-size: 18px;
+	position:absolute;
+	left:0;
+	top: 25px;
+	text-align:center;
+	color:$nav-color;
+	background: $lighter-gray;
+	z-index: 5;
+	i{
+	    margin-left: 10px;
+	}
+	&:hover{
+		cursor:pointer;
+	}
+}
 /* makes admin bar invisible when viewing in browswer */
 #wpadminbar{
 	display:none;
 }
+@import "adstyles";
+@import "announcements";
+@import "lostpets";
+@import "mediaqueries";
