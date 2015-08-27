@@ -35,6 +35,9 @@
 }
 
 @media screen and (max-width:992px){
+	.banner{
+	    height: 50px;
+	}
 	.main-message{
 	    height: 135px;
 	}
@@ -279,9 +282,6 @@
 @media screen and (max-width:650px){
 	.container{
 		width: 95%;
-	}
-	.banner{
-		height: 150px;
 	}
 	.content{
 		.entry{

@@ -6,6 +6,8 @@
 	// Hooking up our function to theme setup
 	add_action( 'init', 'create_posttype' );
 
+	show_admin_bar( false );
+
 	add_action( 'admin_init', 'remove_dashboard_meta' );
 
 	add_action('admin_head', 'my_custom_css');

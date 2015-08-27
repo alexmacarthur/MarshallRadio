@@ -221,13 +221,22 @@ button {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   display: block;
-  background: rgba(255, 255, 255, 0.75);
-  width: 100%; }
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  box-shadow: 0px 0px 1px rgba(26, 26, 26, 0.2); }
   .sub-menu li {
-    line-height: normal; }
+    line-height: 18px;
+    display: block;
+    margin-bottom: 20px; }
     .sub-menu li a {
       color: #1a1a1a;
-      font-weight: 400; }
+      font-weight: 400;
+      font-size: 18px;
+      line-height: normal; }
+      .sub-menu li a:hover {
+        color: #be3d41; }
+    .sub-menu li:first-child {
+      margin-top: 15px; }
   .sub-menu:before {
     content: '';
     display: block;
@@ -974,7 +983,7 @@ h2.tribe-events-list-event-title a {
 .banner {
   background: url("../img/banner-field.jpg") no-repeat;
   background-size: cover;
-  height: 350px; }
+  height: 225px; }
 
 /* ALERT BANNER */
 .weather-bar {
@@ -1140,10 +1149,6 @@ h2.tribe-events-list-event-title a {
   border-top: 6px solid;
   position: absolute;
   margin-left: 10px; }
-
-/* makes admin bar invisible when viewing in browswer */
-#wpadminbar {
-  display: none; }
 
 /* ads */
 .a-single {
@@ -1317,6 +1322,9 @@ h2.tribe-events-list-event-title a {
   .nav-links li {
     font-size: 20px; } }
 @media screen and (max-width: 992px) {
+  .banner {
+    height: 50px; }
+
   .main-message {
     height: 135px; }
 
@@ -1502,9 +1510,6 @@ h2.tribe-events-list-event-title a {
 @media screen and (max-width: 650px) {
   .container {
     width: 95%; }
-
-  .banner {
-    height: 150px; }
 
   .content .entry {
     padding-bottom: 70px; }
