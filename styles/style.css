@@ -6,6 +6,13 @@
   left: 0;
   top: 0; }
 
+.dropdown-arrow:after {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 .grayButton:hover, .content .comments .comments-list ol li[id^="comment-"] .comment-reply-link a:hover, #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left a:hover, #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-left a:hover, .tribe-events-back a:hover, .tribe-events-sub-nav .tribe-events-nav-previous a:hover, .nav-links li:hover, .main-blocks li a:hover ~ .block-icon, .content .entry .moretag:hover, .content .entry .entry-title:hover, .content .bottom-nav a:hover, .sidebar .tweetButtonHolder :hover, .sidebar .widget-area a:hover, .widget-area.stream-box a:hover, .alex-mac:hover, .weather-bar .weather-bar-button:hover {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out; }
@@ -201,6 +208,7 @@ button {
     .nav-links li:hover {
       background: rgba(255, 255, 255, 0.05); }
     .nav-links li a {
+      position: relative;
       color: white;
       text-decoration: none; }
 
@@ -1061,17 +1069,23 @@ h2.tribe-events-list-event-title a {
   display: none !important; }
 
 #mobile-menu {
+  -ms-transform: translatey(-250%);
+  -webkit-transform: translatey(-250%);
+  transform: translatey(-250%);
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 10;
   background: rgba(237, 237, 237, 0.95); }
+  #mobile-menu .menu-home-menu-container {
+    width: 100%; }
   #mobile-menu .nav-links {
     display: block; }
     #mobile-menu .nav-links li {
       width: 100%; }
       #mobile-menu .nav-links li a {
-        font-weight: 600;
+        text-shadow: 2px 2px rgba(26, 26, 26, 0.15);
+        font-weight: normal;
         color: #1a1a1a; }
   #mobile-menu .sub-menu {
     left: auto;
@@ -1082,6 +1096,8 @@ h2.tribe-events-list-event-title a {
     left: auto;
     position: relative;
     background: none; }
+    #mobile-menu .sub-menu:before {
+      border: none; }
 
 #mobile-menu-toggle {
   display: none;
@@ -1098,6 +1114,30 @@ h2.tribe-events-list-event-title a {
     margin-left: 10px; }
   #mobile-menu-toggle:hover {
     cursor: pointer; }
+
+#mobile-menu-close {
+  display: inline;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 5rem; }
+  #mobile-menu-close:hover {
+    cursor: pointer; }
+
+.open-mobile-menu {
+  -ms-transform: translatey(0%) !important;
+  -webkit-transform: translatey(0%) !important;
+  transform: translatey(0%) !important; }
+
+.dropdown-arrow:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid;
+  position: absolute;
+  margin-left: 10px; }
 
 /* makes admin bar invisible when viewing in browswer */
 #wpadminbar {

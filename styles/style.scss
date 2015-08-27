@@ -198,6 +198,7 @@ nav{
 					background:rgba(white, .05);
 				}
 			a{
+				position:relative;
 				color:white;
 				text-decoration:none;	
 			}
@@ -1295,17 +1296,22 @@ h2.tribe-events-list-event-title{
 	display:none!important;
 }
 #mobile-menu{
+	@include offScreen;
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 10;
     background: rgba($lighter-gray, .95);
+    .menu-home-menu-container{
+    	width:100%;
+    }
 	.nav-links{
 		display:block;
 		li{
 			width:100%;
 			a{
-			    font-weight: 600;
+				text-shadow: 2px 2px rgba($nav-color,.15);
+			    font-weight: normal;
 				color: $nav-color;
 			}
 		}
@@ -1316,6 +1322,9 @@ h2.tribe-events-list-event-title{
 		left:auto;
 		position:relative;
 		background:none;
+		&:before{
+			border:none;
+		}
 	}
 }
 #mobile-menu-toggle{
@@ -1335,6 +1344,30 @@ h2.tribe-events-list-event-title{
 	&:hover{
 		cursor:pointer;
 	}
+}
+#mobile-menu-close{
+	display: inline;
+    position: absolute;
+	top: 15px;
+    left: 20px;
+    font-size: 5rem;
+    &:hover{
+    	cursor:pointer;
+    }
+}
+.open-mobile-menu{
+	@include onScreen;
+}
+.dropdown-arrow:after{
+	@extend %vertical-align;
+	content:'';
+    width: 0; 
+	height: 0; 
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid;
+	position: absolute;
+  	margin-left: 10px;
 }
 /* makes admin bar invisible when viewing in browswer */
 #wpadminbar{

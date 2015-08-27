@@ -2,8 +2,7 @@
 $(document).ready(function(){
 
     subMenuManagement();
-
-    var clearLi;
+    initMobileMenu();
 
     $('.click-search').click(function(){
 
@@ -11,6 +10,11 @@ $(document).ready(function(){
     });
 
 });
+
+window.onresize = function(){
+    // because at least item is created in the DOM by jQuery, these MUST be in this order.
+    subMenuManagement();
+}
 
 // submenu hover
 function subMenuManagement(){
@@ -22,11 +26,11 @@ function subMenuManagement(){
 
     if(window.innerWidth > 650){
 
-        $('html').attr('style', '');
-
         $('.nav-links').dropit({
             action: 'mouseenter'
         });
+
+        $('html').attr('style', '');
 
         // show the submenus on hover
         (function(){
@@ -39,8 +43,12 @@ function subMenuManagement(){
 
     } else {
 
+        $('.nav-links').dropit({
+            action: 'click'
+        });
+
         // append the 'X' to close the mobile menu
-        $('.nav-links-holder').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
+        $('#mobile-menu').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
 
         (function(){
             var linksHeight = $('.nav-links').height(),
@@ -62,3 +70,38 @@ function subMenuManagement(){
     }
 }
 
+function initMobileMenu(){
+
+    $('#mobile-menu-toggle').click(function(){
+
+        // if it has this class, it's already open, so close it
+        if($('#mobile-menu').hasClass('open-mobile-menu')){
+
+            // remove overflow-hidden so full page can be used
+            $('html').removeClass('overflow-hidden');
+
+            // remove the class that keeps it open
+            $('#mobile-menu').removeClass('open-mobile-menu');
+
+        // if it doesn't, it's already closed, so open it
+        }else{
+
+            // set overflow-hidden so user can't scroll all over
+            $('html').addClass('overflow-hidden');
+
+            // add the class that keeps it open
+            $('#mobile-menu').addClass('open-mobile-menu');
+        }
+
+    });
+    
+    // closing the mobile menu
+    $('#mobile-menu-close').click(function(){
+
+        // remove the class that keeps it open
+        $('#mobile-menu').removeClass('open-mobile-menu');
+
+        // remove overflow-hidden so full page can be used
+        $('html').removeClass('overflow-hidden');
+    });
+} 

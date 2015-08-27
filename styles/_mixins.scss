@@ -5,7 +5,14 @@
 	left:0;
 	top:0;
 }
-
+%vertical-align{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 @mixin light-boxshadow{
 	-moz-box-shadow: 0 0 0px $nav-color;
 	-webkit-box-shadow: 0 0 0px $nav-color;
@@ -50,21 +57,17 @@
 	-o-transition: all .1s ease-in-out;
 	transition: all .1s ease-in-out;
 }
-
 @mixin text() {
 	color: white;
 	text-transform:uppercase;
 }
-
 @mixin buttonBorder{
 	border: 3px solid white;
 }
-
 @mixin buttonHover{
 	@include transitionSpeed($speed);
 	background: rgba(white, .4);
 }
-
 @mixin buttonStyle{
 	color:white;
 	text-decoration:none;
@@ -72,7 +75,6 @@
 	@include buttonBorder;
 	@include buttonHover;
 }
-
 @mixin grayButtonStyle{
 	background:rgba($nav-color, .5);
 	color:white;
@@ -81,12 +83,10 @@
 	text-decoration:none;
 	padding: 1.5rem 3.5rem;
 }
-
 @mixin grayButtonHover{
 	@include transitionSpeed($speed);
 	background:rgba($nav-color, .7);
 }
-
 @mixin displayFlex{
 	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -94,35 +94,43 @@
 	display: -webkit-flex;     /* NEW - Chrome */
 	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
-
 @mixin justifyContent{
 	justify-content:center;
 	-ms-flex-pack: center;
 }
-
 @mixin rotateBox($degree:90deg){
 	-ms-transform: rotate($degree); /* IE 9 */
     -webkit-transform: rotate($degree); /* Chrome, Safari, Opera */
     transform: rotate($degree);
 }
-
+@mixin offScreen($value: -250%){
+	-moz-transform: translatey($value);
+	-ms-transform: translatey($value);
+	-o-transform: translatey($value);
+	-webkit-transform: translatey($value);
+	transform: translatey($value);
+}
+@mixin onScreen($value: 0%){
+	-moz-transform: translatey($value)!important;
+	-ms-transform: translatey($value)!important;
+	-o-transform: translatey($value)!important;
+	-webkit-transform: translatey($value)!important;
+	transform: translatey($value)!important;
+}
 %justify-content-space-around{
 	justify-content: space-around;
 	-ms-flex-pack: space-around;
 }
-
 %justify-content-flex-end{
 	justify-content: flex-end;
 	-ms-flex-pack: flex-end;
 }
-
 %transition-speed{
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .1s ease-in-out;
 	-o-transition: all .1s ease-in-out;
 	transition: all .1s ease-in-out;
 }
-
 %display-flex{
 	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
 	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -130,7 +138,6 @@
 	display: -webkit-flex;     /* NEW - Chrome */
 	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
-
 %full-link{
 	position:absolute;
 	width:100%;
