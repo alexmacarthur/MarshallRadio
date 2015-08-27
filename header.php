@@ -126,29 +126,29 @@
           <li>
               <a href="/kmhlradioauction">
                 <i class="fa fa-money"></i>
-              </a>
                 <h2>Radio Auction</h2>
+              </a>
                <span>Check out the latest local deals.</span>
           </li>
           <li>
               <a href="/lostpets">
                 <i class="fa fa-paw"></i>
+                <h2>Lost Pets</h2>
               </a>
-              <h2>Lost Pets</h2>
               <span>See our the most recent reported lost pets.</span>
           </li>
           <li>
               <a href="/calendar">
                 <i class="fa fa-calendar"></i>
+                <h2>Community Calendar</h2>
               </a>
-              <h2>Community Calendar</h2>
               <span>Learn more about upcoming events.</span>
           </li>
           <li>
               <a href="http://1400kmhl.com/flea-market">
                 <i class="fa fa-users"></i>
+                <h2>Flea Market</h2>
               </a>
-              <h2>Flea Market</h2>
               <span>Head over to our KMHL site for more info.</span>
           </li>
       </ul>

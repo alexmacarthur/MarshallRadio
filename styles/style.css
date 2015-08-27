@@ -13,7 +13,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-.grayButton:hover, .content .comments .comments-list ol li[id^="comment-"] .comment-reply-link a:hover, #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left a:hover, #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-left a:hover, .tribe-events-back a:hover, .tribe-events-sub-nav .tribe-events-nav-previous a:hover, .nav-links li:hover, .main-blocks i:hover, .content .entry .moretag:hover, .content .entry .entry-title:hover, .content .bottom-nav a:hover, .sidebar .tweetButtonHolder :hover, .sidebar .widget-area a:hover, .widget-area.stream-box a:hover, .alex-mac:hover, .weather-bar .weather-bar-button:hover {
+.grayButton:hover, .content .comments .comments-list ol li[id^="comment-"] .comment-reply-link a:hover, #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left a:hover, #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-left a:hover, .tribe-events-back a:hover, .tribe-events-sub-nav .tribe-events-nav-previous a:hover, .nav-links li:hover, .main-blocks a:hover i, .content .entry .moretag:hover, .content .entry .entry-title:hover, .content .bottom-nav a:hover, .sidebar .tweetButtonHolder :hover, .sidebar .widget-area a:hover, .widget-area.stream-box a:hover, .alex-mac:hover, .weather-bar .weather-bar-button:hover {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out; }
 
@@ -300,15 +300,15 @@ button {
     margin: 0 0 4px 0; }
   .main-blocks span {
     opacity: .75; }
+  .main-blocks a:hover i {
+    color: #be3d41;
+    line-height: 65px; }
   .main-blocks i {
     color: #1a1a1a;
     font-size: 5rem;
     display: block;
     height: 70px;
     line-height: 70px; }
-    .main-blocks i:hover {
-      color: #be3d41;
-      line-height: 65px; }
 
 .block-icon {
   margin: 0 auto;
@@ -987,7 +987,7 @@ h2.tribe-events-list-event-title a {
 
 /* ALERT BANNER */
 .weather-bar {
-  margin: 50px 0 -50px 0px;
+  margin: 50px 0 0px 0px;
   position: relative;
   background: #e02226;
   height: 100px; }

@@ -286,17 +286,21 @@ nav{
 	span{
 	    opacity: .75;
 	}
+	a{
+		&:hover{
+			i{
+				@extend %transition-speed;
+    			color: $dark-pink;
+    			line-height: 65px;
+			}
+		}
+	}
 	i{
 		color:$nav-color;
 		font-size: 5rem;
     	display: block;
     	height: 70px;
     	line-height: 70px;
-    	&:hover{
-    		@extend %transition-speed;
-    		color: $dark-pink;
-    		line-height: 65px;
-    	}
 	}
 }
 
@@ -1208,7 +1212,7 @@ h2.tribe-events-list-event-title{
 
 /* ALERT BANNER */
 .weather-bar{
-	margin: 50px 0 -50px 0px;
+	margin: 50px 0 0px 0px;
 	position:relative;
 	background: $red;
 	height:100px;
