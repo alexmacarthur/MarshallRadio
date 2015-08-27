@@ -53,6 +53,9 @@ h4{
 }
 a {
 	text-decoration: none;
+	&:hover{
+		text-decoration:none;
+	}
 }
 p {
 	color: white;
@@ -62,6 +65,7 @@ span{
 }
 nav{
 	z-index: 2;
+
 }
 .page-title{
 	color:$nav-color;
@@ -102,7 +106,7 @@ nav{
 	bottom: 30px;
 }
 .main-message{
-	background: url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/radiobackground.jpg');
+	background: url('../img/radiobackground.jpg');
 	background-size:cover;
 	width:100%;
 	height:325px;
@@ -133,9 +137,9 @@ nav{
 
 nav{
 	position: absolute;
-	height: 120px;
+	height: 115px;
 	width: 100%;
-	background: #1a1a1a;
+	background: $nav-color;
 	top: 50px;
 	.container{
 		height:100%;
@@ -188,7 +192,7 @@ nav{
 		li{
 			@extend h1;
 			font-size:22px;
-			line-height: 120px;
+			line-height: 115px;
 			height:100%;
 			padding: 0 3%;
 			position:relative;
@@ -229,12 +233,11 @@ nav{
 	}
 
 .main-block-holder{
-	height:200px;
 	width:100%;
 	background:rgba($lighter-gray, 1);
 	border-bottom: 5px solid rgba($nav-color, .15);
 	position:relative;
-	margin: 50px 0 15px 0;
+	margin: 0px 0 15px 0;
 }
 
 .arrow-block{
@@ -252,31 +255,37 @@ nav{
 .main-blocks{
 	@include displayFlex;
 	@include justifyContent;
-	padding-top: 15px;
+    padding: 20px 0 0 0;
 	list-style-type:none;
+    margin: 0;
+    width:100%;
 	li{
 		text-align:center;
 		width:30%;
 		height:150px;
 		margin-right:15px;
 		position:relative;
-		a{
-			position:absolute;
-			width:100%;
-			height:100%;
-			left:0;
-			top:0;
-			&:hover ~ .block-icon{
-				@extend %transition-speed;
-				background-color: $pink;
-			}
-		}
 	}
 	h2{
 		color:$nav-color;
 		display:block;
-		float:right;
 		font-weight:800;
+	   	margin: 0 0 4px 0;
+	}
+	span{
+	    opacity: .75;
+	}
+	i{
+		color:$nav-color;
+		font-size: 5rem;
+    	display: block;
+    	height: 70px;
+    	line-height: 70px;
+    	&:hover{
+    		@extend %transition-speed;
+    		color: $dark-pink;
+    		line-height: 65px;
+    	}
 	}
 }
 
@@ -285,17 +294,10 @@ nav{
 		width:100px;
 		height:100px;
 		border-radius:100%;
-		&.lost-pets-icon{
-			background: $nav-color url('../img/icon-pets.png') no-repeat;
-			background-position:center;
-		}
-		&.calendar-icon{
-			background: $nav-color url('../img/icon-calendar.png') no-repeat;
-			background-position:center;
-		}
-		&.auction-icon{
-			background: $nav-color url('../img/icon-auction.png') no-repeat;
-			background-position: 17px 13px;
+		i{
+			font-size: 80px;
+    		line-height: 100px;
+    		text-align: center;
 		}
 	}
 
@@ -312,6 +314,7 @@ nav{
 	}
 
 .divider {
+    z-index: 1;
 	height: 50px;
 	background: $nav-color;
 	@include boxshadow();
@@ -352,7 +355,7 @@ nav{
 			}
 		}
 		.search-icon{
-		    background: url(http://www.marshallradio.net/wp-content/themes/marshallradio/img/search.png) no-repeat;
+		    background: url(../img/search.png) no-repeat;
 		    border:none;
 		    cursor:pointer;
 		    background-size: 80%;
@@ -1012,7 +1015,6 @@ table#auction{
 		}
 	}
 }
-
 /* ------ CALENDAR TABLE STYLE OVERRIDES ----- */
 .universals{
 	color:$nav-color!important;
@@ -1142,7 +1144,6 @@ h2.tribe-events-list-event-title{
 	}
 }
 /* end of description */
-
 .tribe-events-back{
 	a{
 		@extend .grayButton;
@@ -1166,7 +1167,6 @@ h2.tribe-events-list-event-title{
 		}
 	}
 }
-
 /* event details */
 #tribe-events-content{
 	div[id^="post-"]{
@@ -1190,7 +1190,7 @@ h2.tribe-events-list-event-title{
 }
 /* ----- HEADER-PAGE ----- */
 .banner{
-	background: url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/banner-field.jpg') no-repeat;
+	background: url('../img/banner-field.jpg') no-repeat;
 	background-size:cover;
 	height: 350px;
 }
@@ -1329,7 +1329,7 @@ h2.tribe-events-list-event-title{
 }
 #mobile-menu-toggle{
 	display:none;
-    padding: 10px 15px;
+    padding: 10px 10px;
     font-size: 18px;
 	position:absolute;
 	left:0;

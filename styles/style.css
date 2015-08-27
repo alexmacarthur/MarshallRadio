@@ -13,7 +13,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-.grayButton:hover, .content .comments .comments-list ol li[id^="comment-"] .comment-reply-link a:hover, #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left a:hover, #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-left a:hover, .tribe-events-back a:hover, .tribe-events-sub-nav .tribe-events-nav-previous a:hover, .nav-links li:hover, .main-blocks li a:hover ~ .block-icon, .content .entry .moretag:hover, .content .entry .entry-title:hover, .content .bottom-nav a:hover, .sidebar .tweetButtonHolder :hover, .sidebar .widget-area a:hover, .widget-area.stream-box a:hover, .alex-mac:hover, .weather-bar .weather-bar-button:hover {
+.grayButton:hover, .content .comments .comments-list ol li[id^="comment-"] .comment-reply-link a:hover, #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-left a:hover, #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-left a:hover, .tribe-events-back a:hover, .tribe-events-sub-nav .tribe-events-nav-previous a:hover, .nav-links li:hover, .main-blocks i:hover, .content .entry .moretag:hover, .content .entry .entry-title:hover, .content .bottom-nav a:hover, .sidebar .tweetButtonHolder :hover, .sidebar .widget-area a:hover, .widget-area.stream-box a:hover, .alex-mac:hover, .weather-bar .weather-bar-button:hover {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out; }
 
@@ -81,6 +81,8 @@ h4 {
 
 a {
   text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
 
 p {
   color: white; }
@@ -125,7 +127,7 @@ nav {
   bottom: 30px; }
 
 .main-message {
-  background: url("http://www.marshallradio.net/wp-content/themes/marshallradio/img/radiobackground.jpg");
+  background: url("../img/radiobackground.jpg");
   background-size: cover;
   width: 100%;
   height: 325px;
@@ -149,7 +151,7 @@ nav {
 
 nav {
   position: absolute;
-  height: 120px;
+  height: 115px;
   width: 100%;
   background: #1a1a1a;
   top: 50px; }
@@ -200,7 +202,7 @@ button {
   padding: 0; }
   .nav-links li {
     font-size: 22px;
-    line-height: 120px;
+    line-height: 115px;
     height: 100%;
     padding: 0 3%;
     position: relative;
@@ -237,12 +239,11 @@ button {
     margin: -8px auto 0 auto; }
 
 .main-block-holder {
-  height: 200px;
   width: 100%;
   background: #ededed;
   border-bottom: 5px solid rgba(26, 26, 26, 0.15);
   position: relative;
-  margin: 50px 0 15px 0; }
+  margin: 0px 0 15px 0; }
 
 .arrow-block {
   -ms-transform: rotate(45deg);
@@ -273,42 +274,42 @@ button {
   -webkit-justify-content: center;
           justify-content: center;
   -ms-flex-pack: center;
-  padding-top: 15px;
-  list-style-type: none; }
+  padding: 20px 0 0 0;
+  list-style-type: none;
+  margin: 0;
+  width: 100%; }
   .main-blocks li {
     text-align: center;
     width: 30%;
     height: 150px;
     margin-right: 15px;
     position: relative; }
-    .main-blocks li a {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0; }
-      .main-blocks li a:hover ~ .block-icon {
-        background-color: #EE4D51; }
   .main-blocks h2 {
     color: #1a1a1a;
     display: block;
-    float: right;
-    font-weight: 800; }
+    font-weight: 800;
+    margin: 0 0 4px 0; }
+  .main-blocks span {
+    opacity: .75; }
+  .main-blocks i {
+    color: #1a1a1a;
+    font-size: 5rem;
+    display: block;
+    height: 70px;
+    line-height: 70px; }
+    .main-blocks i:hover {
+      color: #be3d41;
+      line-height: 65px; }
 
 .block-icon {
   margin: 0 auto;
   width: 100px;
   height: 100px;
   border-radius: 100%; }
-  .block-icon.lost-pets-icon {
-    background: #1a1a1a url("../img/icon-pets.png") no-repeat;
-    background-position: center; }
-  .block-icon.calendar-icon {
-    background: #1a1a1a url("../img/icon-calendar.png") no-repeat;
-    background-position: center; }
-  .block-icon.auction-icon {
-    background: #1a1a1a url("../img/icon-auction.png") no-repeat;
-    background-position: 17px 13px; }
+  .block-icon i {
+    font-size: 80px;
+    line-height: 100px;
+    text-align: center; }
 
 .icon-text {
   width: 100%;
@@ -320,6 +321,7 @@ button {
     text-align: center; }
 
 .divider {
+  z-index: 1;
   height: 50px;
   background: #1a1a1a;
   box-shadow: 0px 1px 10px #1a1a1a;
@@ -362,7 +364,7 @@ button {
       .divider form .search-word:hover {
         cursor: pointer; }
     .divider form .search-icon {
-      background: url(http://www.marshallradio.net/wp-content/themes/marshallradio/img/search.png) no-repeat;
+      background: url(../img/search.png) no-repeat;
       border: none;
       cursor: pointer;
       background-size: 80%;
@@ -970,7 +972,7 @@ h2.tribe-events-list-event-title a {
 
 /* ----- HEADER-PAGE ----- */
 .banner {
-  background: url("http://www.marshallradio.net/wp-content/themes/marshallradio/img/banner-field.jpg") no-repeat;
+  background: url("../img/banner-field.jpg") no-repeat;
   background-size: cover;
   height: 350px; }
 
@@ -1101,7 +1103,7 @@ h2.tribe-events-list-event-title a {
 
 #mobile-menu-toggle {
   display: none;
-  padding: 10px 15px;
+  padding: 10px 10px;
   font-size: 18px;
   position: absolute;
   left: 0;
@@ -1297,6 +1299,9 @@ h2.tribe-events-list-event-title a {
   .container {
     width: 95%; } }
 @media screen and (max-width: 1200px) {
+  .main-blocks {
+    padding-bottom: 15px; }
+
   .main-message {
     height: 300px; }
     .main-message h1, .main-message .nav-links li, .nav-links .main-message li {

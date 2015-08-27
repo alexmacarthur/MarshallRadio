@@ -127,28 +127,32 @@
       <div class="main-block-holder">
         <ul class="main-blocks">
             <li>
-                <a href="/kmhlradioauction"></a>
-                <div class="block-icon auction-icon"></div>
-                <div class="icon-text">
+                <a href="/kmhlradioauction">
+                  <i class="fa fa-money"></i>
+                </a>
                   <h2>Radio Auction</h2>
-                  <span>Check out the latest local deals.</span>
-                </div>
+                 <span>Check out the latest local deals.</span>
             </li>
             <li>
-                <a href="/lostpets"></a>
-                <div class="block-icon lost-pets-icon"></div>
-                <div class="icon-text">
-                  <h2>Lost Pets</h2>
-                  <span>See our the most recent reported lost pets.</span>
-                </div>    
+                <a href="/lostpets">
+                  <i class="fa fa-paw"></i>
+                </a>
+                <h2>Lost Pets</h2>
+                <span>See our the most recent reported lost pets.</span>
             </li>
             <li>
-                <a href="/calendar"></a>
-                <div class="block-icon calendar-icon"></div>
-                <div class="icon-text">
-                  <h2>Community Calendar</h2>
-                  <span>Learn more about upcoming events.</span>
-                </div>
+                <a href="/calendar">
+                  <i class="fa fa-calendar"></i>
+                </a>
+                <h2>Community Calendar</h2>
+                <span>Learn more about upcoming events.</span>
+            </li>
+            <li>
+                <a href="http://1400kmhl.com/flea-market">
+                  <i class="fa fa-users"></i>
+                </a>
+                <h2>Flea Market</h2>
+                <span>Head over to our KMHL site for more info.</span>
             </li>
         </ul>
         <div class="arrow-block"></div>
