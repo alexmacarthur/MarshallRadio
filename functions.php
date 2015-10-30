@@ -17,17 +17,28 @@
 	add_action( 'init', 'my_custom_init' );
 
 	add_filter( 'enter_title_here', 'wpb_change_title_text' );
-	
+
 	add_filter( 'enter_title_here', 'wpb_change_title_text_lost_pets' );
-	
+
 	add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 	add_action( 'pre_get_posts', 'five_posts_on_homepage' );
 
 	add_theme_support( 'menus' );
 
-	if ( function_exists( 'add_theme_support' ) ) { 
-		add_theme_support( 'post-thumbnails' ); 
+	// enables SWF uploads
+	function demo($mimes) {
+		if ( function_exists( 'current_user_can' ) )
+			$unfiltered = $user ? user_can( $user, 'unfiltered_html' ) : current_user_can( 'unfiltered_html' );
+		if ( !empty( $unfiltered ) ) {
+			$mimes['swf'] = 'application/x-shockwave-flash';
+		}
+		return $mimes;
+	}
+	add_filter('upload_mimes','demo');
+
+	if ( function_exists( 'add_theme_support' ) ) {
+		add_theme_support( 'post-thumbnails' );
 	}
 
 	$locale = get_locale();
@@ -55,7 +66,7 @@
 	    wp_register_script( 'dropit', get_template_directory_uri() . '/js/dropit.js', array('jquery'), '1', true);
 	    wp_register_script( 'custom-script', get_template_directory_uri() . '/js/scripts.js', array('jquery','dropit','bootstrap-javascript'), '1', true);
 
-	    // Enqueue my custom script, which depends on jQuery, which means jQuery is automatically loaded as well. 
+	    // Enqueue my custom script, which depends on jQuery, which means jQuery is automatically loaded as well.
 	    wp_enqueue_script( 'custom-script' );
 	    wp_enqueue_script( 'dropit' );
 	    wp_enqueue_script('bootstrap-javascript');
@@ -102,7 +113,7 @@
 	            endif;
 	        ?>
 	<?php } // end custom_comments
-	
+
 	// Custom callback to list pings
 	function custom_pings($comment, $args, $depth) {
 	       $GLOBALS['comment'] = $comment;
@@ -117,9 +128,9 @@
 	            <div class="comment-content">
 	                <?php comment_text() ?>
 	            </div>
-		<?php 
+		<?php
 	} // end custom_pings
-	
+
 	// Produces an avatar image with the hCard-compliant photo class
 	function commenter_link() {
 	    $commenter = get_comment_author_link();
@@ -132,7 +143,7 @@
 	    $avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar( $avatar_email, 80 ) );
 	    echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
 	} // end commenter_link
-	
+
 	// For category lists on category archives: Returns other categories except the current one (redundant)
 	function cats_meow($glue) {
 	    $current_cat = single_cat_title( '', false );
@@ -149,7 +160,7 @@
 
 	    return trim(join( $glue, $cats ));
 	} // end cats_meow
-	
+
 	// For tag lists on tag archives: Returns other tags except the current one (redundant)
 	function tag_ur_it($glue) {
 	    $current_tag = single_tag_title( '', '',  false );
@@ -166,7 +177,7 @@
 
 	    return trim(join( $glue, $tags ));
 	} // end tag_ur_it
-	
+
 	// Register widgetized areas
 	function theme_widgets_init() {
 	    // Area 1
@@ -210,7 +221,7 @@
 	  ) );
 
 	} // end theme_widgets_init
-	
+
 	$preset_widgets = array (
 	    'primary_widget_area'  => array( 'search', 'pages', 'categories', 'archives' ),
 	    'secondary_widget_area'  => array( 'links', 'meta' )
@@ -219,7 +230,7 @@
 	    update_option( 'sidebars_widgets', $preset_widgets );
 	}
 	// update_option( 'sidebars_widgets', NULL );
-	
+
 	// Check for static widgets in widget-ready areas
 	function is_sidebar_active( $index ){
 	  global $wp_registered_sidebars;
@@ -278,7 +289,7 @@
 				'has_archive' => true,
 				'rewrite' => array('slug' => 'lost-pets'),
 			)
-		);		
+		);
 	}
 
 	function my_custom_init() {
@@ -308,12 +319,12 @@
 
 	function change_default_title( $title ){
 	     $screen = get_current_screen();
-	 
+
 	     if  ( '_your_custom_post_type_' == $screen->lost_pets ) {
 	          $title = 'The new title';
 	     }
 	     return $title;
-	}	
+	}
 
 	function wpb_change_title_text( $title ){
 	     $screen = get_current_screen();
@@ -369,9 +380,9 @@
 		}
 	  </style>";
 	}
-	
+
 	function my_login_logo() { ?>
-	
+
 	    <style type="text/css">
 	        body.login div#login h1 a {
 	            background-image: url('http://www.marshallradio.net/wp-content/themes/marshallradio/img/logo-login.png')!important;
@@ -391,7 +402,7 @@
 				box-shadow: 0 0 2px rgba(226, 226, 226, 0.8);
 			}
 	    </style>
-	
+
 	<?php }
 
 ?>
