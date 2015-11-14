@@ -91,8 +91,10 @@
 
     <div class="main-message">
         <div class="container main-message-holder">
-          <h1>WELCOME TO MARSHALL RADIO</h1>
-          <span>Home of KKCK, KMHL, KARL, &AMP; KARZ</span>
+          <div class="container">
+            <span>Home of KKCK, KMHL, KARL, &AMP; KARZ</span>
+          </div>
+<!--           <h1>WELCOME TO MARSHALL RADIO</h1> -->
         </div>
         <div class="background"></div>
     </div>

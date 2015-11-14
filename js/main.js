@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     $('.click-search').click(function(){
 
-        $('.search-box').animate({width: 'toggle'});
+        $('.search-box').toggleClass('open-search');
     });
 
 });
