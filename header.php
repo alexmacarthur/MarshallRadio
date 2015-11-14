@@ -112,12 +112,12 @@
 
     <?php if ($numberOfAnnouncements > 0): ?>
 
-      <div class="weather-bar">
-        <div class="weather-bar-container">
-          <span>Weather Announcements</span>
-          <a href="<?php get_site_url(); ?>/weather" target="_self"><span class="weather-bar-button">Click for Details</span></a>
-        </div>
+    <div class="weather-bar">
+      <div class="weather-bar-container">
+        <span>Weather Announcements</span>
+        <a href="<?php get_site_url(); ?>/weather" target="_self"><span class="weather-bar-button">Click for Details</span></a>
       </div>
+    </div>
 
     <?php endif ?>
 
@@ -154,7 +154,6 @@
       </ul>
       <div class="arrow-block"></div>
     </div>
-    <br>
 
     <?php echo adrotate_group(2); ?>
 
@@ -177,9 +176,7 @@
         }
     ?>
 
-    <div class="banner" style="background-image: url('<?php echo $bannerImage; ?>')">
- 
-    </div><!--/.banner -->
+    <div class="banner" style="background-image: url('<?php echo $bannerImage; ?>')"></div>
 
     <div class="col-md-12 divider page">
       <div class="container">
@@ -218,9 +215,9 @@
         $firstCategory = $category[0]->cat_name;
       ?>
 
-      <h1 class="page-title"><?php echo $pageTitle; echo $firstCategory; ?></h1>
-          <?php get_search_form(); ?>
-        </div>
+        <h1 class="page-title"><?php echo $pageTitle; echo $firstCategory; ?></h1>
+        <?php //get_search_form(); ?>
+      </div>
     </div>
 
     <?php

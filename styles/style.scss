@@ -329,12 +329,14 @@ nav{
 	}
 
 .divider {
+	@include clearfix;
     z-index: 1;
 	height: 50px;
 	background: $nav-color;
 	@include boxshadow();
 	padding: 5px;
 	margin-bottom: 0;
+	float: none;
 
 	.page-title{
 		font-weight:100;
@@ -398,6 +400,7 @@ nav{
 }
 
 .container{
+	@include clearfix;
 	.title{
 		padding: 15px 0 25px 0;
 
