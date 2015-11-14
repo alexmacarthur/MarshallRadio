@@ -1,0 +1,22 @@
+{
+  "name": "marshallradio-wp",
+  "description": "Marshall Radio's Wordpress website.",
+  "private": true,
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexmacarthur/marshallradio"
+  },
+  "devDependencies": {
+    "gulp": "^3.0.9",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-imagemin": "^2.4.0",
+    "imagemin-pngquant": "^4.1.0",
+    "xo": "*"
+  }
+}
