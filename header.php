@@ -99,13 +99,7 @@
         <div class="background"></div>
     </div>
     
-    <div class="col-md-12 divider home">
-        <div class="container">
-
-        <?php get_search_form(); ?>
-
-      </div>
-    </div>
+    <div class="col-md-12 divider home"></div>
 
     <?php
       $count_posts = wp_count_posts('announcements');
@@ -217,7 +211,7 @@
         $firstCategory = $category[0]->cat_name;
       ?>
 
-        <h1 class="page-title"><?php echo $pageTitle; echo $firstCategory; ?></h1>
+        <h1 class="page-title"><?php //echo $pageTitle; echo $firstCategory; ?></h1>
         <?php //get_search_form(); ?>
       </div>
     </div>

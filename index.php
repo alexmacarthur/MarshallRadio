@@ -24,7 +24,7 @@
 
 		<?php /* Create a div with a unique ID thanks to the_ID() and semantic classes with post_class() */ ?>
 						<div id="post-<?php the_ID(); ?>" class="col-md-12 entry">
-		                <a class="moretag" href="<?php the_permalink();?>">Learn More</a>
+		                <a class="moretag" href="<?php the_permalink();?>">Read More</a>
 		<?php /* an h2 title */ ?>
 		                    <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'hbd-theme'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a><aside></aside></h1>
 
@@ -48,7 +48,7 @@
 							<?php
 		                    if ( has_post_thumbnail() ) {
    								$image_src = wp_get_attachment_image_src( get_post_thumbnail_id(),'full' );
-     							echo '<img src="' . $image_src[0]  . '" width="75%"  />';
+     							//echo '<img src="' . $image_src[0]  . '" width="75%"  />';
 								} 
 							?>
 
@@ -69,7 +69,7 @@
 		                    	$theCategory = $category[0]->cat_name;
 		                    ?>
 
-		                    <span class="post-date">Posted <?php echo the_time('F j, Y'); if($theCategory == "General"){echo "";}else{echo " in <span class='cat-name'>" . $category[0]->cat_name . "</span>";}?><span>
+		                    <span class="post-date">Posted <?php echo the_time('F j, Y'); if($theCategory === "General" || $theCategory === 'Uncategorized'){echo "";}else{echo " in <span class='cat-name'>" . $category[0]->cat_name . "</span>";}?><span>
 
 		                </div><!-- #post-<?php the_ID(); ?> --> <!--/entry-->
 		                

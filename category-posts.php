@@ -8,7 +8,7 @@
 <!-- content/post pages -->
 
 <?php get_header(); ?>
-<div class="container main">
+<div class="container">
 <div class="row">
     <div class="col-md-8 content">
 

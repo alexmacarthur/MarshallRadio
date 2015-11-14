@@ -115,17 +115,18 @@ nav{
 		margin:0;
 		font-size:4em;
 		font-weight:800;
-		color: $nav-color;
+		//color: $nav-color;
 	}
 	span{
 		text-transform:uppercase;
 		width:100%;
-		font-weight:400;
+		font-weight:800;
 		font-size:30px;
+		color: white;
 	}
 	.background{
 		@extend %full-link;
-		background: rgba(white, .75)
+		background: rgba($nav-color, .1)
 	}
 }
 
@@ -145,32 +146,6 @@ nav{
 		height:100%;
 	}
 }
-	button{
-		display:none;
-		position:absolute;
-		float:left;       
-		top: 15px;
-		left: 1%;
-		border: 2px solid white;
-		background: none;
-		border-radius: 2px; 
-		height: 50px; 
-		width:50px;
-		z-index: 10;
-		&:before{
-			border-bottom: 5px solid white;
-			border-top: 5px solid white;
-			content: "";
-			height: 22px;
-			position: absolute;
-			right: 7px;
-			top: 13px;
-			width: 33px;
-		}
-		&:hover{
-			cursor:pointer;
-		}
-	}
 	.nav-logo{
 		float:left;
 	    text-align: center;
@@ -245,11 +220,12 @@ nav{
 
 .main-block-holder{
 	width:100%;
-	//background:rgba($lighter-gray, 1);
-	background: white;
+	background:rgba($lighter-gray, 1);
+	//background: white;
 	border-bottom: 5px solid rgba($nav-color, .15);
 	position:relative;
 	margin: 0px 0 15px 0;
+	padding-top: 18px;
 }
 
 .arrow-block{
@@ -344,68 +320,59 @@ nav{
 		margin-top: 7px;
 		color:white;
 	}
-	form{
-		float:right;
-		height: 40px;
-		.input-holder{
-			@include displayFlex;
-			list-style-type: none;
-		}
-		.search-box{
-			@include transitionSpeed(.25s);
-			border:none;
-			border-radius: 2px;
-			position:absolute;
-	    	right: 65px;
-			height: 40px;
-			padding: 0;
-			width: 0;
-			overflow: hidden;
-			z-index:1000;
-			height: 35px;
-    		margin-top: 2px;
+}
 
-			&.open-search{
-				@include transitionSpeed(.25s);
-				width: 250px;
-				padding: 10px;
-			}
+#searchform{
+	height: 40px;
+	.input-holder{
+		@include displayFlex;
+		list-style-type: none;
+	}
+	.search-word{
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 36px;
+		color: $nav-color;
+		margin-right: 10px;
+		&:hover{
+			cursor:pointer;
 		}
-		.search-word{
-			font-weight: 600;
-			font-size: 25px;
-			line-height: 36px;
-			color: white;
-			margin-right: 10px;
-			&:hover{
-				cursor:pointer;
-			}
-		}
-		.search-icon{
-		    background: url(../img/search.png) no-repeat;
-		    border:none;
-		    cursor:pointer;
-		    background-size: 80%;
-			background-position: center;
-			float:left;
-			padding: 10px 20px;
-			height: 37px;
-		}
-		input::-webkit-input-placeholder {
-				color: $nav-color;
-		}
+	}
+	input::-webkit-input-placeholder {
+			color: $nav-color;
+	}
 
-		input:-moz-placeholder { /* Firefox 18- */
-				color: $nav-color;  
-		}
+	input:-moz-placeholder { /* Firefox 18- */
+			color: $nav-color;  
+	}
 
-		input::-moz-placeholder {  /* Firefox 19+ */
-				color: $nav-color;  
-		}
+	input::-moz-placeholder {  /* Firefox 19+ */
+			color: $nav-color;  
+	}
 
-		input:-ms-input-placeholder {  
-				color: $nav-color;  
-		}
+	input:-ms-input-placeholder {  
+			color: $nav-color;  
+	}
+}
+
+.search-box{
+	border: 0;
+	border-radius: 2px;
+	padding: 0 10px;
+	overflow: hidden;
+	height: 35px;
+	width: 80%;
+}
+
+.search-button {
+	background: $nav-color;
+	border: 0;
+	height: 35px;
+	color: white;
+	width: 20%;
+
+	&:hover {
+		background:$light-gray;
 	}
 }
 
@@ -440,7 +407,6 @@ nav{
 		}
 	}
 }
-
 
 .entry-content{
 	img{
@@ -503,12 +469,12 @@ aside{
 	}
 	.entry {
 		height: auto;
-		min-height: 250px;
-		background: white;
+		//min-height: 250px;
+		background: #d4d4d4;
 		background-size: cover;
 		background-position: 0 25%;
 		margin-bottom: 3em;
-		padding-bottom: 25px;
+		padding-bottom: 30px;
 		// @include entryBoxShadow;
 		&:last-child{
 			margin-bottom:0;
@@ -520,28 +486,30 @@ aside{
 			margin-bottom: 20px;
 		}
 		.moretag{
-			@include grayButtonStyle;
 			position: absolute;
-			right: 13px;
-			bottom: 13px;
+			right: 0px;
+			bottom: 0px;
 			z-index:10;
 			padding:1em 1.5em;
+			color: $nav-color;
+			font-weight: 800;
+			text-transform: uppercase;
 			}
 
 		.moretag:hover{
 			@extend %transition-speed;
-			background:rgba($nav-color, .7);
+			color: $red;
 			}
 
 		.entry-title {
 			background:#535353;
-			color:white;
-			margin-bottom: 20px;
-			padding: 10px;
-			display: block;
-			height:auto;
-			width: 85%;
-			margin-left: -30px;
+			color: white;
+		    margin-bottom: 20px;
+		    padding: 10px 20px;
+		    display: inline-block;
+		    height: auto;
+		    /* width: auto; */
+		    margin-left: -30px;
 
 			a{
 				color: white;
@@ -806,6 +774,13 @@ aside{
 		width:350px;
 		border:3px solid $nav-color;
 		margin: 0 auto 3rem auto;
+
+		&.search-widget-area {
+		    margin-bottom: 15px;
+			background: none;
+			border: 0;
+		}
+
 		a{
 			color:white;
 			text-decoration:none;
@@ -1225,7 +1200,7 @@ h2.tribe-events-list-event-title{
 
 /* ALERT BANNER */
 .weather-bar{
-	margin: 50px 0 0px 0px;
+	margin: 0;
 	position:relative;
 	background: $red;
 	height:100px;
@@ -1299,9 +1274,6 @@ h2.tribe-events-list-event-title{
 			margin-top:10px;
 			margin-bottom:0;
 		}
-	}
-	&.weather-bar-page{
-		margin: 50px 0 0px 0px;
 	}
 }
 .weather-bar-container{

@@ -161,6 +161,7 @@
 	}
 	.weather-bar.weather-bar-page{
 		margin: 0 0 20px 0;
+		padding-top: 0px;
 	}
 }
 
@@ -168,8 +169,15 @@
 	#mobile-menu-toggle{
 		display:block;
 	}
-	button{
-		display:block;
+	.sub-menu{
+	    box-shadow: none;
+		li{
+			&:first-child{
+			    margin-top: 15px;
+			    margin-bottom: 0;
+			    line-height: 100%;
+			}
+		}
 	}
 	.nav-links{
 		display:none;
@@ -343,14 +351,12 @@
 			}
 		}
 	}
-}
-.sidebar{
-	.widget-area{
-		&:first-of-type{
-			margin-top: 0em;
-		}
+
+	.weather-bar.weather-bar-page{
+		padding-top: 10px;
 	}
 }
+
 
 @media screen and (max-width:450px){
 

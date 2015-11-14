@@ -4,17 +4,11 @@ $(document).ready(function(){
     subMenuManagement();
     initMobileMenu();
 
-    $('.click-search').click(function(){
-
-        $('.search-box').toggleClass('open-search');
-    });
-
 });
 
-window.onresize = function(){
-    // because at least item is created in the DOM by jQuery, these MUST be in this order.
+$(window).resize(function(){
     subMenuManagement();
-};
+});
 
 // submenu hover
 function subMenuManagement(){
@@ -24,7 +18,7 @@ function subMenuManagement(){
         e.preventDefault();
     });
 
-    if(window.innerWidth > 650){
+    if(window.innerWidth > 768){
 
         $('.nav-links').dropit({
             action: 'mouseenter'
@@ -51,7 +45,7 @@ function subMenuManagement(){
         $('#mobile-menu').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
 
         (function(){
-            var linksHeight = $('.nav-links').height(),
+            var linksHeight = $('.nav-links').outerHeight(),
             windowHeight = $(window).height();
             $('.nav-links').css('margin-top', (windowHeight-linksHeight)/2);
         })();

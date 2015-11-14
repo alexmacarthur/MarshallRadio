@@ -1,5 +1,11 @@
 <div class="col-md-4 sidebar">
 
+    <div class="widget-area search-widget-area">
+        <ul class="widget-list">
+           <?php get_search_form(); ?>
+        </ul>
+    </div>
+
 	<?php echo do_shortcode("[simpleswitch_streams]"); ?>
 	
     <!-- Weather Widget -->
