@@ -73,6 +73,7 @@ nav{
 
 .container{
 	width:80%;
+	max-width: 1400px;
 	position:relative;
 }
 
@@ -104,6 +105,8 @@ nav{
 	text-align:right;
 	z-index:1;
 	bottom: 10px;
+	left: 50%;
+    transform: translateX(-50%);
 }
 .main-message{
 	background: url('../img/radiobackground.jpg');
@@ -1278,6 +1281,7 @@ h2.tribe-events-list-event-title{
 }
 .weather-bar-container{
 	width: 75%;
+	max-width: 1200px;
 	height: 100%;
 	margin: 0 auto;
 	 padding-bottom: 10px;

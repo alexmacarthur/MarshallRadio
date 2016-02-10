@@ -1,0 +1,166 @@
+/* nav styles */
+.visible-menu {
+	display: block !important;
+}
+nav {
+	height: 115px;
+	width: 100%;
+	top: 50px;
+}
+.nav-logo {
+	float: left;
+	text-align: center;
+	position: relative;
+	width: 20%;
+}
+.menu-home-menu-container {
+	float: left;
+	width: 80%;
+}
+.nav-links {
+	height: 100%;
+	list-style-type: none;
+	text-align: center;
+	padding: 0;
+
+	li {
+		@extend h1;
+		font-size: 22px;
+		line-height: 115px;
+		height: 100%;
+		padding: 0 3%;
+		position: relative;
+		display: inline-block;
+
+		&:hover {
+			@extend %transition-speed;
+			background: rgba(white, .05);
+		}
+
+		a {
+			color: $nav-color;
+			position: relative;
+			text-decoration: none;
+		}
+	}
+}
+.sub-menu {
+	@include horizontalAlign;
+	display: block;
+	background: rgba(white, .95);
+	width: 100%;
+	box-shadow: 0px 0px 1px rgba($nav-color, 0.2);
+
+	li {
+		line-height: 18px;
+		display: block;
+		margin-bottom: 20px;
+
+		a {
+			color: $nav-color;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: normal;
+
+			&:hover {
+				color: $dark-pink;
+			}
+		}
+		&:first-child {
+			margin-top: 15px;
+		}
+	}
+	&:before {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid rgba(white, .75);
+		margin: -8px auto 0 auto;
+	}
+}
+#ehu-open-button {
+	display: none !important;
+}
+#mobile-menu {
+	@include offScreen;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background: rgba($lighter-gray, .95);
+
+	.menu-home-menu-container {
+		width: 100%;
+	}
+	.nav-links {
+		display: block;
+
+		li {
+			width: 100%;
+
+			a {
+				text-shadow: 2px 2px rgba($nav-color, .15);
+				font-weight: normal;
+				color: $nav-color;
+			}
+		}
+	}
+	.sub-menu {
+		@include undoHorizontalAlign;
+		padding: 0;
+		left: auto;
+		position: relative;
+		background: none;
+
+		&:before {
+			border: none;
+		}
+	}
+}
+#mobile-menu-toggle {
+	display: none;
+	padding: 10px 10px;
+	font-size: 18px;
+	position: absolute;
+	left: 0;
+	top: 25px;
+	text-align: center;
+	color: $nav-color;
+	background: $lighter-gray;
+	z-index: 5;
+
+	i {
+		margin-left: 10px;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
+#mobile-menu-close {
+	display: inline;
+	position: absolute;
+	top: 15px;
+	left: 20px;
+	font-size: 5rem;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+.open-mobile-menu {
+	@include onScreen;
+}
+.dropdown-arrow:after {
+	@extend %vertical-align;
+	content: '';
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid;
+	position: absolute;
+	margin-left: 10px;
+}

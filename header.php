@@ -109,7 +109,7 @@
     <?php if ($numberOfAnnouncements > 0): ?>
 
     <div class="weather-bar">
-      <div class="weather-bar-container">
+      <div class="container weather-bar-container">
         <span>Weather Announcements</span>
         <a href="<?php get_site_url(); ?>/weather" target="_self"><span class="weather-bar-button">Click for Details</span></a>
       </div>
@@ -118,36 +118,38 @@
     <?php endif ?>
 
     <div class="main-block-holder">
-      <ul class="main-blocks">
-          <li>
-              <a href="/kmhlradioauction">
-                <i class="fa fa-money"></i>
-                <h2>Radio Auction</h2>
-              </a>
-               <span>Check out the latest local deals.</span>
-          </li>
-          <li>
-              <a href="/lostpets">
-                <i class="fa fa-paw"></i>
-                <h2>Lost Pets</h2>
-              </a>
-              <span>See our the most recent reported lost pets.</span>
-          </li>
-          <li>
-              <a href="/calendar">
-                <i class="fa fa-calendar"></i>
-                <h2>Community Calendar</h2>
-              </a>
-              <span>Learn more about upcoming events.</span>
-          </li>
-          <li>
-              <a href="http://1400kmhl.com/flea-market">
-                <i class="fa fa-users"></i>
-                <h2>Flea Market</h2>
-              </a>
-              <span>Head over to our KMHL site for more info.</span>
-          </li>
-      </ul>
+      <div class="container">
+        <ul class="main-blocks">
+            <li>
+                <a href="/kmhlradioauction">
+                  <i class="fa fa-money"></i>
+                  <h2>Radio Auction</h2>
+                </a>
+                 <span>Check out the latest local deals.</span>
+            </li>
+            <li>
+                <a href="/lostpets">
+                  <i class="fa fa-paw"></i>
+                  <h2>Lost Pets</h2>
+                </a>
+                <span>See our the most recent reported lost pets.</span>
+            </li>
+            <li>
+                <a href="/calendar">
+                  <i class="fa fa-calendar"></i>
+                  <h2>Community Calendar</h2>
+                </a>
+                <span>Learn more about upcoming events.</span>
+            </li>
+            <li>
+                <a href="http://1400kmhl.com/flea-market">
+                  <i class="fa fa-users"></i>
+                  <h2>Flea Market</h2>
+                </a>
+                <span>Head over to our KMHL site for more info.</span>
+            </li>
+        </ul>
+      </div>
       <div class="arrow-block"></div>
     </div>
 
