@@ -42,8 +42,10 @@ function subMenuManagement(){
         });
 
         // append the 'X' to close the mobile menu
-        $('#mobile-menu').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
-
+        if($('#mobile-menu-close').length <= 0) {
+            $('#mobile-menu').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
+        }
+        
         (function(){
             var linksHeight = $('.nav-links').outerHeight(),
             windowHeight = $(window).height();
